@@ -24,13 +24,14 @@ const cli = meow({
 		'  Temperature: 32C'
 	]
 });
-
+/*Convert temperature in celsius*/
 function _toCelcius(temp) {
 	return Math.round(((temp - 32) * 5) / 9);
 }
 
 updateNotifier({ pkg}).notify();
 
+/*Display the temperature of the city which you wrote in the terminal*/
 weather(cli.input, (err, result) => {
 	if (err) {
 		console.log(chalk.bold.red(err));
